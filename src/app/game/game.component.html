@@ -1,0 +1,34 @@
+<!-- game.component.html -->
+<div class="background">
+<div class="game-container" [ngClass]="{'correct-guess': isCorrectGuess}">
+    <div class="songs-container">
+        <h2>Songs</h2>
+        <div class="songs-grid">
+            <div *ngFor="let song of songs" class="song-item">
+                <p>{{ song.name }}</p>
+                <audio controls>
+                    <source [src]="song['preview_url']" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+    </div>
+
+    <div class="artists-container">
+        <h2>Artists</h2>
+        <div class="artists-grid">
+            <div *ngFor="let artist of artists" class="artist-item">
+                <button (click)="makeGuess(artist.name)" class="artist-button">
+                    <img [src]="artist.image" alt="{{ artist.name }}" class="artist-image">
+                    <span>{{ artist.name }}</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="feedback" class="feedback">
+        <p class="feedback-text" [ngClass]="getFeedbackClass()">{{ feedback }}</p>
+        <button class="play-again-button" (click)="goToHome()">Play Again!</button>
+    </div>
+</div>
+</div>

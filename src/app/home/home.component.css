@@ -1,0 +1,91 @@
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 98vh;
+    background-image: url('./bg.jpeg');
+    background-size: cover;
+  background-position: center;
+    font-weight: bold;
+}
+
+.home-page-container {
+    font-family: 'Arial', sans-serif;
+    background-color: grey;
+    border: 5px solid #000000;
+    text-align: center;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 20px;
+  }
+
+/* Apply these styles to your form elements */
+.form-class {
+    max-width: 500px;
+    margin: 20px auto; /* Reduce margin for mobile */
+    padding: 10px; /* Reduce padding for mobile */
+    /*border: 2px solid #000000;*/
+    border-radius: 5px;
+}
+
+.label-container {
+    font-size: larger;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.select-container,
+.input-container {
+    font-size: large;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.button-submit {
+    background-color: forestgreen;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.4em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.button-submit:hover {
+    background-color: darkgreen;
+}
+
+
+
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+    .form-class {
+        max-width: 90%; /* Adjust form width for mobile screens */
+    }
+
+    .label-container,
+    .select-container,
+    .input-container {
+        font-size: medium; /* Adjust font size for mobile */
+    }
+}

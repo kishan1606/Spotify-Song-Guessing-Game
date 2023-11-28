@@ -1,0 +1,120 @@
+:host {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow:hidden;
+}
+.background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('../home/bg.jpeg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.game-container {
+    border: 2px solid black;
+    position: fixed;
+    text-align: center;
+    background-color: grey;
+    font-size: 1em;
+    padding: 20px;
+}
+
+.songs-container,
+.artists-container {
+    margin-bottom: 10px;
+}
+
+.songs-grid,
+.artists-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.song-item,
+.artist-item {
+    margin: 20px;
+}
+
+.feedback {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.play-again-button {
+    font-size: 1.2em;
+    background-color: forestgreen;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    padding: 10px 15px;
+}
+
+.play-again-button:hover {
+    background-color: darkgreen;
+}
+
+.artist-button {
+    background: none;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    padding: 0;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.artist-button:hover,
+.artist-button:focus {
+    outline: none;
+    opacity: 0.8;
+}
+
+.artist-button span {
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.artist-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.feedback-text.correct {
+    font-size: 2em;
+    color: green;
+    animation: bounce 1s ease infinite;
+}
+
+.feedback-text.incorrect {
+    font-size: 1.5em;
+    color: red;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+@media (max-width: 600px) {
+    .song-item,
+    .artist-item {
+        margin: 10px;
+    }
+}

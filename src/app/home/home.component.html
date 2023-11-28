@@ -1,0 +1,34 @@
+<div>
+  <div *ngIf="!isLoading" class="home-page-container"> 
+    <div class="title-app">
+      <h1>Song Guessing Game</h1>
+    </div>
+    <div class="form-container">
+      <form class="form-class" [formGroup]="configForm" (ngSubmit)="handlePlay()">
+        <label class="label-container" for="genre">Genre:</label>
+        <select class="select-container" formControlName="genre">
+          <option [value]=""></option>
+          <option [value]="genre" *ngFor="let genre of genres">
+            {{ genre }}
+          </option>
+        </select>
+
+        <label class="label-container" for="numberOfSongs">Number of Songs:</label>
+        <input class="input-container" type="number" id="numberOfSongs" formControlName="numSongs" required>
+
+        <label class="label-container" for="numberOfArtists">Number of Artists:</label>
+        <input class="input-container" type="number" id="numberOfArtists" formControlName="numberOfArtists" required>
+
+        <button class="button-submit" [disabled]="configForm.invalid">Play Game!</button>
+      </form>
+    </div>
+  </div>
+  <div class="loading-container" *ngIf="isLoading">
+    <div class="loading-animation">
+      <app-music-loading></app-music-loading>
+    </div>
+  </div>
+  
+</div>
+
+
